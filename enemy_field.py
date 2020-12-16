@@ -25,7 +25,7 @@ def generate_enemy_field(enemy_bf):
             for i in range(4):
                 set_singledecker(enemy_bf)
 
-        except ValueError:
+        except IndexError:
             pass
         else:
             field_generated = True
@@ -235,3 +235,6 @@ def delete_from_list(ship):
         for j in range(-1, 2):
             if (ship.position_row + i, ship.position_col + j) in L:
                 L.remove((ship.position_row + i, ship.position_col + j))
+
+enemy_bf = BattleField()
+generate_enemy_field(enemy_bf)
